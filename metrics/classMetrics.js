@@ -1,4 +1,9 @@
 const { getComplexity } = require("./complexity");
+const { getLCOM } = require("./libs/lcom");
+const { getDIT } = require("./libs/dit");
+const { getCBO } = require("./libs/cbo");
+const { getRFC } = require("./libs/rfc");
+const { getFanOut } = require("./libs/fanOut");
 
 /*
     Αναλύει μία class και υπολογίζει βασικά
@@ -16,32 +21,7 @@ const { getComplexity } = require("./complexity");
     αν η class κληρονομεί από άλλη class.
 */
 
-function getDIT(cls){
-
-    // αν δεν υπάρχει class επιστρέφουμε 0
-    if(!cls){
-        return 0;
-    }
-
-    // αν το node δεν έχει getBaseClass (π.χ interface)
-    if(typeof cls.getBaseClass !== "function"){
-        return 0;
-    }
-
-    var depth = 0;
-    if (cls.getBaseClass){
-        var base = cls.getBaseClass();
-
-        while(base){
-            depth++;
-            base = base.getBaseClass ? base.getBaseClass() : null;
-        }
-    }
-
-    return depth;
-}
-
-function analyzeClass(cls){
+function analyzeClass(cls, fanInMap){
 
     if(!cls){
         return {
@@ -64,7 +44,12 @@ function analyzeClass(cls){
         name: cls.getName() || "AnonymousClass",
         NOM: methods.length,
         WMC: wmc,
-        DIT: getDIT(cls)
+        DIT: getDIT(cls),
+        CBO: getCBO(cls),
+        RFC: getRFC(cls),        
+        LCOM: getLCOM(cls),
+        FanOut: getFanOut(cls),
+        FanIn: fanInMap[cls.getName()] || 0
     };
 
     return metrics;

@@ -15,7 +15,7 @@ const { analyzeClass } = require("./classMetrics");
     πόσα methods συνολικά υπάρχουν.
 */
 
-function analyzeFile(file){
+function analyzeFile(file, fanInMap){
 
     const loc = file.getFullText().split(/\r?\n/).length;
 
@@ -30,7 +30,7 @@ function analyzeFile(file){
 
     classes.forEach(cls => {
 
-        const clsMetrics = analyzeClass(cls);
+        const clsMetrics = analyzeClass(cls, fanInMap);
 
         metrics.classes.push(clsMetrics);
         metrics.methods += clsMetrics.NOM;

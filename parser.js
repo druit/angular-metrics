@@ -19,7 +19,7 @@ function loadProject(path){
     // προσθέτουμε όλα τα ts αρχεία
     project.addSourceFilesAtPaths(path);
 
-    // αγνοούμε declaration files (.d.ts)
+    // στοιχεια που θέλουμε νε εμπεριέχονται στο search
     const allowed = [
         ".component.ts",
         ".service.ts",
@@ -27,11 +27,11 @@ function loadProject(path){
         ".interceptor.ts",
         ".directive.ts",
         ".pipe.ts",
-        ".module.ts"
+        // ".module.ts"
     ];
 
     const files = project.getSourceFiles().filter(file => allowed.some(type => file.getBaseName().endsWith(type)));
-    
+
     return files;
 }
 

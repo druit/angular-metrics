@@ -31,31 +31,6 @@ function getComplexity(node){
     return complexity;
 }
 
-// Δημιουργεί traversal
-
-// function getComplexity(node){
-
-//     let complexity = 1;
-
-//     node.forEachDescendant(desc => {
-
-//         const kind = desc.getKind();
-
-//         if(
-//             kind === SyntaxKind.IfStatement ||
-//             kind === SyntaxKind.ForStatement ||
-//             kind === SyntaxKind.WhileStatement ||
-//             kind === SyntaxKind.CaseClause ||
-//             kind === SyntaxKind.CatchClause
-//         ){
-//             complexity++;
-//         }
-
-//     });
-
-//     return complexity;
-// }
-
 
 
 module.exports = { getComplexity };
