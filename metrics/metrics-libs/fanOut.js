@@ -1,22 +1,19 @@
 /*
     FanOut
 
-    Μετρά πόσες εξαρτήσεις
-    έχει μία κλάση.
+    Μετρά πόσες εξαρτήσεις έχει μία κλάση.
 
-    Στα Angular projects
-    οι εξαρτήσεις συνήθως
-    εμφανίζονται στο constructor
-    μέσω Dependency Injection.
+    Στα Angular projects οι εξαρτήσεις συνήθως εμφανίζονται
+    στο constructor μέσω Dependency Injection.
 
     Παράδειγμα:
 
-    constructor(
-        private authService: AuthService,
-        private blogService: BlogService
-    )
+        constructor(
+            private authService: AuthService,
+            private blogService: BlogService
+        )
 
-    FanOut = 2
+        FanOut = 2
 */
 function getFanOut(cls) {
 

@@ -1,17 +1,24 @@
 /*
     DIT (Depth of Inheritance Tree)
 
-    Μετρά το βάθος της κληρονομικότητας
-    μιας κλάσης.
+    Μετρά το βάθος της κληρονομικότητας μιας κλάσης.
 
-    Δηλαδή πόσες superclasses υπάρχουν
-    μέχρι τη ρίζα της ιεραρχίας.
+    Δηλαδή πόσες superclasses υπάρχουν μέχρι τη ρίζα της ιεραρχίας.
 
     Υψηλό DIT σημαίνει:
-    - βαθιά ιεραρχία
-    - πιθανή αυξημένη πολυπλοκότητα.
-*/
+        - βαθιά ιεραρχία κλάσεων
+        - πιθανή αυξημένη πολυπλοκότητα κατανόησης.
 
+    Παράδειγμα:
+
+        class BaseComponent {}
+        class AdminComponent extends BaseComponent {}
+        class DashboardComponent extends AdminComponent {}
+
+    Για την κλάση DashboardComponent:
+
+        DIT = 2
+*/
 function getDIT(cls) {
 
     if(!cls){
