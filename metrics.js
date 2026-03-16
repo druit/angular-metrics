@@ -12,7 +12,7 @@
 const { loadProject } = require("./parser");
 const { analyzeFile } = require("./metrics/fileMetrics");
 const { checkClassRefactor } = require("./rules");
-const { computeFanIn } = require("./metrics/libs/fanIn");
+const { computeFanIn } = require("./metrics/metrics-libs/fanIn");
 
 
 // path του Angular project
@@ -51,4 +51,4 @@ files.forEach(file => {
 
 });
 
-console.log("\nΗ ανάλυση ολοκληρώθηκε");
+console.log("\nΗ ανάλυση ολοκληρώθηκε.");

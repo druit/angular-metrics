@@ -1,23 +1,26 @@
 const { SyntaxKind } = require("ts-morph");
 
 /*
-    Υπολογίζει Cyclomatic Complexity ενός method.
+    Cyclomatic Complexity
 
-    Βασική ιδέα:
-    complexity = 1 + αριθμός decision nodes.
+    Υπολογίζει την πολυπλοκότητα
+    ενός method με βάση τα
+    decision nodes.
 
-    Decision nodes είναι:
+    Complexity = 1 + αριθμός branches.
+
+    Branch nodes:
+
     - if
     - for
     - while
     - case
     - catch
 
-    Το AST μας επιτρέπει να εντοπίσουμε αυτά τα nodes
-    και να αυξήσουμε το complexity.
+    Υψηλή πολυπλοκότητα σημαίνει
+    δύσκολη συντήρηση του κώδικα.
 */
 
-// Έτσι αποφεύγεις πλήρη traversal.
 function getComplexity(node){
 
     let complexity = 1;
