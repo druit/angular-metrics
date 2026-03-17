@@ -16,7 +16,6 @@ function loadProject(path){
         skipAddingFilesFromTsConfig: true
     });
 
-    // προσθέτουμε όλα τα ts αρχεία
     project.addSourceFilesAtPaths(path);
 
     // στοιχεια που θέλουμε νε εμπεριέχονται στο search

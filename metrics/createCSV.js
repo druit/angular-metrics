@@ -10,10 +10,12 @@ const fs = require("fs");
         -  NOP
         -  NPM
         -  WMC
+        -  WMC*
         -  DIT
         -  CBO
         -  RFC
         -  LCOM
+        -  MPC
         -  FanOut
         -  FanIn
     =================
@@ -49,6 +51,7 @@ function createCSV(classes, fileName = "metrics.csv"){
         "CBO",
         "RFC",
         "LCOM",
+        "MPC",
         "FanOut",
         "FanIn"
     ].join(","));
@@ -65,6 +68,7 @@ function createCSV(classes, fileName = "metrics.csv"){
         CBO: [],
         RFC: [],
         LCOM: [],
+        MPC: [],
         FanOut: [],
         FanIn: []
     };
@@ -84,6 +88,7 @@ function createCSV(classes, fileName = "metrics.csv"){
             cls.CBO,
             cls.RFC,
             cls.LCOM,
+            cls.MPC,
             cls.FanOut,
             cls.FanIn
         ].join(","));
@@ -102,6 +107,7 @@ function createCSV(classes, fileName = "metrics.csv"){
         stats.CBO.push(cls.CBO);
         stats.RFC.push(cls.RFC);
         stats.LCOM.push(cls.LCOM);
+        stats.MPC.push(cls.MPC);
         // ---------------------
         stats.FanOut.push(cls.FanOut);
         stats.FanIn.push(cls.FanIn);
@@ -112,7 +118,7 @@ function createCSV(classes, fileName = "metrics.csv"){
     var maxMetrics = [];
     var averageMetrics = [];
     var sumMetrics = [];
-    const metricsArray = ["LOC","SLOC","NOM","NOP","NPM","WMC","WMCStar","DIT","CBO","RFC","LCOM","FanOut","FanIn"];
+    const metricsArray = ["LOC","SLOC","NOM","NOP","NPM","WMC","WMCStar","DIT","CBO","RFC","LCOM","MPC","FanOut","FanIn"];
 
     metricsArray.forEach(metric => {
         const { sum, avg, max } = getStats(stats[metric]);

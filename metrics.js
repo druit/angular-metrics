@@ -54,6 +54,7 @@ files.forEach(file => {
             console.log("CBO", cls.CBO);
             console.log("RFC", cls.RFC);           
             console.log("LCOM", cls.LCOM);
+            console.log("MPC:", cls.MPC);
             // -------------------------
             console.log("FanOut", cls.FanOut);
             console.log("FanIn", cls.FanIn);
