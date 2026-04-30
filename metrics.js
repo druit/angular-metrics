@@ -14,6 +14,7 @@ const { analyzeFile } = require("./metrics/fileMetrics");
 const { checkClassRefactor } = require("./rules");
 const { computeFanIn } = require("./metrics/metrics-libs/fanIn");
 const { createCSV } = require("./metrics/createCSV");
+const { computeNOCC } = require("./metrics/metrics-libs/nocc");
 
 
 // path του Angular project
@@ -22,13 +23,14 @@ const files = loadProject("D:/arx.net/github/PROJECT/GREEK SPOT PROJECT/CMS/gree
 console.log("\nΗ ανάλυση άρχισε...");
 
 const fanInMap = computeFanIn(files);
+const noccMap = computeNOCC(files);
 const allClasses = [];
 
 files.forEach(file => {
 
     console.log("Analyzing:", file.getBaseName());
     
-    const metrics = analyzeFile(file, fanInMap);   
+    const metrics = analyzeFile(file, fanInMap, noccMap);   
     
     metrics.classes.forEach(cls => {
 
@@ -59,6 +61,9 @@ files.forEach(file => {
             console.log("FanOut", cls.FanOut);
             console.log("FanIn", cls.FanIn);
             // -------------------------
+            console.log("NOCC", cls.NOCC);
+            console.log("DAC", cls.DAC);
+            // ---------------------------------
             console.log("Warnings:", warnings.join(", "));
             console.log("\n*****************************************************")
 

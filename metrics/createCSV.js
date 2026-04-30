@@ -18,6 +18,8 @@ const fs = require("fs");
         -  MPC
         -  FanOut
         -  FanIn
+        -  ΝΟCC
+        -  DAC
     =================
         - SUM
         - AVERAGE
@@ -53,7 +55,9 @@ function createCSV(classes, fileName = "metrics.csv"){
         "LCOM",
         "MPC",
         "FanOut",
-        "FanIn"
+        "FanIn",
+        "NOCC",
+        "DAC"
     ].join(","));
 
     const stats = {
@@ -63,14 +67,16 @@ function createCSV(classes, fileName = "metrics.csv"){
         NOP: [],
         NPM: [],
         WMC: [],
-        WMCStar: [],
+        WMCstar: [],
         DIT: [],
         CBO: [],
         RFC: [],
         LCOM: [],
         MPC: [],
         FanOut: [],
-        FanIn: []
+        FanIn: [],
+        NOCC: [],
+        DAC: [],
     };
 
     classes.forEach(cls => {
@@ -83,14 +89,16 @@ function createCSV(classes, fileName = "metrics.csv"){
             cls.NOP,
             cls.NPM,
             cls.WMC,
-            cls.WMCStar,
+            cls.WMCstar,
             cls.DIT,
             cls.CBO,
             cls.RFC,
             cls.LCOM,
             cls.MPC,
             cls.FanOut,
-            cls.FanIn
+            cls.FanIn,
+            cls.NOCC,
+            cls.DAC
         ].join(","));
 
         stats.LOC.push(cls.LOC);
@@ -101,7 +109,7 @@ function createCSV(classes, fileName = "metrics.csv"){
         stats.NPM.push(cls.NPM);
         // ---------------------
         stats.WMC.push(cls.WMC);
-        stats.WMCStar.push(cls.WMCStar);
+        stats.WMCstar.push(cls.WMCstar);
         // ---------------------
         stats.DIT.push(cls.DIT);
         stats.CBO.push(cls.CBO);
@@ -111,6 +119,9 @@ function createCSV(classes, fileName = "metrics.csv"){
         // ---------------------
         stats.FanOut.push(cls.FanOut);
         stats.FanIn.push(cls.FanIn);
+        // ---------------------
+        stats.NOCC.push(cls.NOCC);
+        stats.DAC.push(cls.DAC);
     });
 
     csvRows.push("");
@@ -118,7 +129,7 @@ function createCSV(classes, fileName = "metrics.csv"){
     var maxMetrics = [];
     var averageMetrics = [];
     var sumMetrics = [];
-    const metricsArray = ["LOC","SLOC","NOM","NOP","NPM","WMC","WMCStar","DIT","CBO","RFC","LCOM","MPC","FanOut","FanIn"];
+    const metricsArray = ["LOC","SLOC","NOM","NOP","NPM","WMC","WMCstar","DIT","CBO","RFC","LCOM","MPC","FanOut","FanIn", "NOCC", "DAC"];
 
     metricsArray.forEach(metric => {
         const { sum, avg, max } = getStats(stats[metric]);

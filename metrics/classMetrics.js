@@ -9,8 +9,10 @@ const { getLOC, getSLOC } = require("./metrics-libs/loc");
 const { getNPM } = require("./metrics-libs/npm");
 const { getNOP } = require("./metrics-libs/nop");
 const { getMPC } = require("./metrics-libs/mpc");
+const { getNOCC } = require("./metrics-libs/nocc");
+const { getDAC } = require("./metrics-libs/dac");
 
-function analyzeClass(cls, fanInMap){
+function analyzeClass(cls, fanInMap, noccMap){
 
     if(!cls){
         return {
@@ -33,7 +35,9 @@ function analyzeClass(cls, fanInMap){
             MPC: 0,
             // ---------------
             FanOut: 0,
-            FanIn: 0
+            FanIn: 0,
+            NOCC: 0,
+            DAC: 0,
         };
     }
 
@@ -57,7 +61,10 @@ function analyzeClass(cls, fanInMap){
         MPC: getMPC(cls),
         // ---------------
         FanOut: getFanOut(cls),
-        FanIn: fanInMap[cls.getName()] || 0
+        FanIn: fanInMap[cls.getName()] || 0,
+        // ----------------
+        NOCC: getNOCC(cls, noccMap),
+        DAC: getDAC(cls),
     };
 
     return metrics;

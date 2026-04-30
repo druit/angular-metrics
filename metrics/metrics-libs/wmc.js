@@ -61,6 +61,41 @@ function getWMC(cls){
 
     WMC* = WMC / NOM
 */
+
+/*
+    WMC* / AMC / WAC (Weighted Average Complexity)
+
+    Μετρά τον μέσο όρο πολυπλοκότητας των methods
+    μιας κλάσης.
+
+    Υπολογίζεται ως:
+
+        WMC* = WMC / NOM
+
+    όπου:
+        WMC = συνολική πολυπλοκότητα (άθροισμα CC)
+        NOM = αριθμός methods
+
+    Το metric αυτό είναι επίσης γνωστό ως:
+
+        - AMC (Average Method Complexity)
+        - WAC (Weighted Average Complexity)
+
+    Υψηλό WMC* σημαίνει:
+        - τα methods είναι κατά μέσο όρο πολύπλοκα
+        - αυξημένη δυσκολία κατανόησης και συντήρησης.
+
+    Παράδειγμα:
+
+        method1 → CC = 2
+        method2 → CC = 4
+        method3 → CC = 6
+
+        WMC = 12
+        NOM = 3
+
+        WMC* = 12 / 3 = 4
+*/
 function getWMCstar(cls) {
     return getWMC(cls) / getNOM(cls);
 }
