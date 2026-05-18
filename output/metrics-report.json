@@ -1,6 +1,6 @@
 {
   "project": "greekspot_cms",
-  "generatedAt": "2026-05-18T19:46:18.784Z",
+  "generatedAt": "2026-05-18T19:56:19.954Z",
   "summary": {
     "totalClasses": 36,
     "totalLOC": 3526,
@@ -14,6 +14,16 @@
       "directives": 0,
       "pipes": 0,
       "unknown": 0
+    },
+    "smells": {
+      "Low Cohesion": 10,
+      "Large Class": 6,
+      "High FanIn": 1,
+      "Large File": 2,
+      "High Message Passing": 7,
+      "High Complexity": 3,
+      "Too Many Properties": 2,
+      "High RFC": 2
     }
   },
   "classes": [
