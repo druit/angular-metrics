@@ -17,6 +17,7 @@ const { createCSV } = require("./metrics/createCSV");
 const { createJSONReport } = require("./metrics/createJSON");
 const { computeNOCC } = require("./metrics/metrics-libs/nocc");
 
+const { getAngularType } = require("./utils/angularType");
 
 // path του Angular project
 // const files = loadProject("D:/arx.net/github/PROJECT/GREEK SPOT PROJECT/CMS/greekspot_cms/src/**/*.ts");
@@ -42,6 +43,7 @@ console.log("\nΗ ανάλυση άρχισε...");
 const fanInMap = computeFanIn(files);
 const noccMap = computeNOCC(files);
 const allClasses = [];
+const jsonClasses = [];
 
 files.forEach(file => {
 
@@ -54,6 +56,11 @@ files.forEach(file => {
         const warnings = checkClassRefactor(cls);
 
         allClasses.push(cls);
+        
+        jsonClasses.push({
+            ...cls,
+            type: getAngularType(file.getBaseName())
+        });
         
         if (warnings.length > 0) {
             console.log("\n*****************************************************")
@@ -93,6 +100,6 @@ files.forEach(file => {
 createCSV(allClasses);
 
 // Create JSON file
-createJSONReport(projectName, allClasses);
+createJSONReport(projectName, jsonClasses);
 
 console.log("\nΗ ανάλυση ολοκληρώθηκε.");

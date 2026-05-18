@@ -1,8 +1,20 @@
 {
   "project": "greekspot_cms",
-  "generatedAt": "2026-05-18T15:46:16.833Z",
+  "generatedAt": "2026-05-18T16:10:52.989Z",
   "summary": {
-    "totalClasses": 36
+    "totalClasses": 36,
+    "totalLOC": 3526,
+    "averageWMC": 8.472222222222221,
+    "averageRFC": 16.805555555555557,
+    "types": {
+      "components": 18,
+      "services": 16,
+      "guards": 1,
+      "interceptors": 1,
+      "directives": 0,
+      "pipes": 0,
+      "unknown": 0
+    }
   },
   "classes": [
     {
@@ -22,7 +34,8 @@
       "FanOut": 2,
       "FanIn": 0,
       "NOCC": 0,
-      "DAC": 2
+      "DAC": 2,
+      "type": "component"
     },
     {
       "name": "AuthGuard",
@@ -41,7 +54,8 @@
       "FanOut": 2,
       "FanIn": 0,
       "NOCC": 0,
-      "DAC": 0
+      "DAC": 0,
+      "type": "guard"
     },
     {
       "name": "JwtInterceptor",
@@ -60,7 +74,8 @@
       "FanOut": 0,
       "FanIn": 0,
       "NOCC": 0,
-      "DAC": 0
+      "DAC": 0,
+      "type": "interceptor"
     },
     {
       "name": "AdminMenuTagsService",
@@ -79,7 +94,8 @@
       "FanOut": 1,
       "FanIn": 2,
       "NOCC": 0,
-      "DAC": 0
+      "DAC": 0,
+      "type": "service"
     },
     {
       "name": "AdminMenuService",
@@ -98,7 +114,8 @@
       "FanOut": 1,
       "FanIn": 1,
       "NOCC": 0,
-      "DAC": 0
+      "DAC": 0,
+      "type": "service"
     },
     {
       "name": "AuthService",
@@ -117,7 +134,8 @@
       "FanOut": 1,
       "FanIn": 3,
       "NOCC": 0,
-      "DAC": 0
+      "DAC": 0,
+      "type": "service"
     },
     {
       "name": "BlogService",
@@ -136,7 +154,8 @@
       "FanOut": 1,
       "FanIn": 2,
       "NOCC": 0,
-      "DAC": 0
+      "DAC": 0,
+      "type": "service"
     },
     {
       "name": "ConfirmService",
@@ -155,7 +174,8 @@
       "FanOut": 0,
       "FanIn": 9,
       "NOCC": 0,
-      "DAC": 1
+      "DAC": 1,
+      "type": "service"
     },
     {
       "name": "ContactService",
@@ -174,7 +194,8 @@
       "FanOut": 1,
       "FanIn": 2,
       "NOCC": 0,
-      "DAC": 0
+      "DAC": 0,
+      "type": "service"
     },
     {
       "name": "GalleryService",
@@ -193,7 +214,8 @@
       "FanOut": 1,
       "FanIn": 1,
       "NOCC": 0,
-      "DAC": 0
+      "DAC": 0,
+      "type": "service"
     },
     {
       "name": "GoogleService",
@@ -212,7 +234,8 @@
       "FanOut": 1,
       "FanIn": 1,
       "NOCC": 0,
-      "DAC": 0
+      "DAC": 0,
+      "type": "service"
     },
     {
       "name": "HeroService",
@@ -231,7 +254,8 @@
       "FanOut": 1,
       "FanIn": 1,
       "NOCC": 0,
-      "DAC": 0
+      "DAC": 0,
+      "type": "service"
     },
     {
       "name": "MenuService",
@@ -250,7 +274,8 @@
       "FanOut": 1,
       "FanIn": 1,
       "NOCC": 0,
-      "DAC": 0
+      "DAC": 0,
+      "type": "service"
     },
     {
       "name": "NewsletterService",
@@ -269,7 +294,8 @@
       "FanOut": 1,
       "FanIn": 1,
       "NOCC": 0,
-      "DAC": 0
+      "DAC": 0,
+      "type": "service"
     },
     {
       "name": "OpeningHoursService",
@@ -288,7 +314,8 @@
       "FanOut": 1,
       "FanIn": 1,
       "NOCC": 0,
-      "DAC": 0
+      "DAC": 0,
+      "type": "service"
     },
     {
       "name": "OurStoryService",
@@ -307,7 +334,8 @@
       "FanOut": 1,
       "FanIn": 1,
       "NOCC": 0,
-      "DAC": 0
+      "DAC": 0,
+      "type": "service"
     },
     {
       "name": "ReservationsService",
@@ -326,7 +354,8 @@
       "FanOut": 1,
       "FanIn": 2,
       "NOCC": 0,
-      "DAC": 0
+      "DAC": 0,
+      "type": "service"
     },
     {
       "name": "SnackbarService",
@@ -345,7 +374,8 @@
       "FanOut": 0,
       "FanIn": 11,
       "NOCC": 0,
-      "DAC": 1
+      "DAC": 1,
+      "type": "service"
     },
     {
       "name": "TablesService",
@@ -364,7 +394,8 @@
       "FanOut": 1,
       "FanIn": 1,
       "NOCC": 0,
-      "DAC": 0
+      "DAC": 0,
+      "type": "service"
     },
     {
       "name": "AdminLayoutComponent",
@@ -383,7 +414,8 @@
       "FanOut": 2,
       "FanIn": 0,
       "NOCC": 0,
-      "DAC": 0
+      "DAC": 0,
+      "type": "component"
     },
     {
       "name": "LoginComponent",
@@ -402,7 +434,8 @@
       "FanOut": 2,
       "FanIn": 0,
       "NOCC": 0,
-      "DAC": 0
+      "DAC": 0,
+      "type": "component"
     },
     {
       "name": "ConfirmDialogComponent",
@@ -421,7 +454,8 @@
       "FanOut": 0,
       "FanIn": 0,
       "NOCC": 0,
-      "DAC": 1
+      "DAC": 1,
+      "type": "component"
     },
     {
       "name": "SnackbarComponent",
@@ -440,7 +474,8 @@
       "FanOut": 0,
       "FanIn": 1,
       "NOCC": 0,
-      "DAC": 1
+      "DAC": 1,
+      "type": "component"
     },
     {
       "name": "BlogManagerComponent",
@@ -459,7 +494,8 @@
       "FanOut": 3,
       "FanIn": 0,
       "NOCC": 0,
-      "DAC": 2
+      "DAC": 2,
+      "type": "component"
     },
     {
       "name": "ContactManagerComponent",
@@ -478,7 +514,8 @@
       "FanOut": 3,
       "FanIn": 0,
       "NOCC": 0,
-      "DAC": 2
+      "DAC": 2,
+      "type": "component"
     },
     {
       "name": "AdminDashboardComponent",
@@ -497,7 +534,8 @@
       "FanOut": 5,
       "FanIn": 0,
       "NOCC": 0,
-      "DAC": 0
+      "DAC": 0,
+      "type": "component"
     },
     {
       "name": "FloorManagerComponent",
@@ -516,7 +554,8 @@
       "FanOut": 1,
       "FanIn": 0,
       "NOCC": 0,
-      "DAC": 3
+      "DAC": 3,
+      "type": "component"
     },
     {
       "name": "GalleryManagerComponent",
@@ -535,7 +574,8 @@
       "FanOut": 3,
       "FanIn": 0,
       "NOCC": 0,
-      "DAC": 3
+      "DAC": 3,
+      "type": "component"
     },
     {
       "name": "GoogleRatingManagerComponent",
@@ -554,7 +594,8 @@
       "FanOut": 2,
       "FanIn": 0,
       "NOCC": 0,
-      "DAC": 1
+      "DAC": 1,
+      "type": "component"
     },
     {
       "name": "HeroManagerComponent",
@@ -573,7 +614,8 @@
       "FanOut": 3,
       "FanIn": 0,
       "NOCC": 0,
-      "DAC": 3
+      "DAC": 3,
+      "type": "component"
     },
     {
       "name": "MenuManagerComponent",
@@ -592,7 +634,8 @@
       "FanOut": 3,
       "FanIn": 0,
       "NOCC": 0,
-      "DAC": 1
+      "DAC": 1,
+      "type": "component"
     },
     {
       "name": "NewsletterManagerComponent",
@@ -611,7 +654,8 @@
       "FanOut": 4,
       "FanIn": 0,
       "NOCC": 0,
-      "DAC": 2
+      "DAC": 2,
+      "type": "component"
     },
     {
       "name": "OpeningHoursManagerComponent",
@@ -630,7 +674,8 @@
       "FanOut": 1,
       "FanIn": 0,
       "NOCC": 0,
-      "DAC": 2
+      "DAC": 2,
+      "type": "component"
     },
     {
       "name": "OurStoryManagerComponent",
@@ -649,7 +694,8 @@
       "FanOut": 2,
       "FanIn": 0,
       "NOCC": 0,
-      "DAC": 2
+      "DAC": 2,
+      "type": "component"
     },
     {
       "name": "ReservationsManagerComponent",
@@ -668,7 +714,8 @@
       "FanOut": 3,
       "FanIn": 0,
       "NOCC": 0,
-      "DAC": 3
+      "DAC": 3,
+      "type": "component"
     },
     {
       "name": "TagsManagerComponent",
@@ -687,7 +734,8 @@
       "FanOut": 3,
       "FanIn": 0,
       "NOCC": 0,
-      "DAC": 1
+      "DAC": 1,
+      "type": "component"
     }
   ]
 }

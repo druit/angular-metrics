@@ -62,11 +62,27 @@ The analyzer can detect maintainability issues such as:
 
 ---
 
+## Current Capabilities
+
+The analyzer currently supports:
+
+* AST-based static analysis
+* Angular-aware file detection
+* CK and maintainability metrics extraction
+* CSV and JSON report generation
+* Project-level summary statistics
+* Angular artifact statistics
+* Fan-In / Fan-Out analysis
+* Inheritance analysis
+* Maintainability warnings
+
+---
+
 ## Supported Angular Files
 
 The analyzer automatically detects Angular-related TypeScript files containing keywords such as:
 
-```text id="t4yb4k"
+```text
 component
 service
 guard
@@ -79,7 +95,7 @@ pipe
 
 ## Installation
 
-```bash id="jhkk1g"
+```bash
 npm install
 ```
 
@@ -87,13 +103,23 @@ npm install
 
 ## Usage
 
-```bash id="bx8zyw"
+Add the following script inside `package.json`:
+
+```json
+"scripts": {
+  "start": "node index.js"
+}
+```
+
+Run the analyzer:
+
+```bash
 npm start "D:/Projects/your-angular-project"
 ```
 
 Example:
 
-```bash id="wlpdws"
+```bash
 npm start "D:/Projects/greekspot_cms"
 ```
 
@@ -108,13 +134,33 @@ Generated files include:
 * CSV metrics reports
 * JSON structured analysis reports
 * Summary statistics
+* Angular artifact statistics
 
 Example:
 
-```text id="xb1wm7"
+```text
 output/
 ├── greekspot_cms-metrics.csv
 └── metrics-report.json
+```
+
+Example JSON structure:
+
+```json
+{
+  "project": "greekspot_cms",
+  "summary": {
+    "totalClasses": 36
+  },
+  "classes": [
+    {
+      "name": "MenuManagerComponent",
+      "type": "component",
+      "LOC": 644,
+      "RFC": 107
+    }
+  ]
+}
 ```
 
 ---
@@ -222,11 +268,27 @@ University of Macedonia
 
 ---
 
+## Τρέχουσες Δυνατότητες
+
+Το εργαλείο υποστηρίζει:
+
+* AST-based static analysis
+* Angular-aware ανάλυση αρχείων
+* Εξαγωγή CK και maintainability metrics
+* CSV και JSON report generation
+* Summary statistics σε επίπεδο project
+* Angular artifact statistics
+* Fan-In / Fan-Out analysis
+* Inheritance analysis
+* Maintainability warnings
+
+---
+
 ## Υποστηριζόμενα Angular Αρχεία
 
 Το εργαλείο εντοπίζει αυτόματα Angular TypeScript αρχεία που περιέχουν λέξεις όπως:
 
-```text id="oqzxf4"
+```text
 component
 service
 guard
@@ -239,7 +301,7 @@ pipe
 
 ## Εγκατάσταση
 
-```bash id="22vz0z"
+```bash
 npm install
 ```
 
@@ -247,13 +309,23 @@ npm install
 
 ## Χρήση
 
-```bash id="6u8fkn"
+Προσθέστε το παρακάτω script στο `package.json`:
+
+```json
+"scripts": {
+  "start": "node index.js"
+}
+```
+
+Εκτέλεση analyzer:
+
+```bash
 npm start "D:/Projects/your-angular-project"
 ```
 
 Παράδειγμα:
 
-```bash id="br0w5e"
+```bash
 npm start "D:/Projects/greekspot_cms"
 ```
 
@@ -268,13 +340,33 @@ npm start "D:/Projects/greekspot_cms"
 * CSV reports με metrics
 * JSON structured reports
 * Summary statistics
+* Angular artifact statistics
 
 Παράδειγμα:
 
-```text id="xw7m1h"
+```text
 output/
 ├── greekspot_cms-metrics.csv
 └── metrics-report.json
+```
+
+Παράδειγμα JSON structure:
+
+```json
+{
+  "project": "greekspot_cms",
+  "summary": {
+    "totalClasses": 36
+  },
+  "classes": [
+    {
+      "name": "MenuManagerComponent",
+      "type": "component",
+      "LOC": 644,
+      "RFC": 107
+    }
+  ]
+}
 ```
 
 ---
