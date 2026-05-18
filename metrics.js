@@ -18,7 +18,21 @@ const { computeNOCC } = require("./metrics/metrics-libs/nocc");
 
 
 // path του Angular project
-const files = loadProject("D:/arx.net/github/PROJECT/GREEK SPOT PROJECT/CMS/greekspot_cms/src/**/*.ts");
+// const files = loadProject("D:/arx.net/github/PROJECT/GREEK SPOT PROJECT/CMS/greekspot_cms/src/**/*.ts");
+
+const path = require("path");
+
+const projectPath = process.argv[2];
+
+if (!projectPath) {
+    console.error("Please provide Angular project path.");
+    process.exit(1);
+}
+
+const tsPattern = path.join(projectPath, "src/**/*.ts");
+
+const files = loadProject(tsPattern);
+
 
 console.log("\nΗ ανάλυση άρχισε...");
 

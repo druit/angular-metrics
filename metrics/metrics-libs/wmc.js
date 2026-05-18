@@ -97,7 +97,12 @@ function getWMC(cls){
         WMC* = 12 / 3 = 4
 */
 function getWMCstar(cls) {
-    return getWMC(cls) / getNOM(cls);
+    
+    const nom = getNOM(cls);
+
+    if (nom === 0) return 0;
+
+    return getWMC(cls) / nom;
 }
 
 module.exports = { getWMC, getWMCstar };

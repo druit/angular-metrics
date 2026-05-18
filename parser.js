@@ -10,7 +10,7 @@ const { Project } = require("ts-morph");
     ώστε να τα αναλύσουμε αργότερα για metrics.
 */
 
-function loadProject(path){
+function loadProject(path) {
 
     const project = new Project({
         skipAddingFilesFromTsConfig: true
@@ -18,18 +18,27 @@ function loadProject(path){
 
     project.addSourceFilesAtPaths(path);
 
-    // στοιχεια που θέλουμε νε εμπεριέχονται στο search
+    // Angular file keywords
     const allowed = [
-        ".component.ts",
-        ".service.ts",
-        ".guard.ts",
-        ".interceptor.ts",
-        ".directive.ts",
-        ".pipe.ts",
-        // ".module.ts"
+        "component",
+        "service",
+        "guard",
+        "interceptor",
+        "directive",
+        "pipe"
+        // "module"
     ];
 
-    const files = project.getSourceFiles().filter(file => allowed.some(type => file.getBaseName().endsWith(type)));
+    const files = project.getSourceFiles().filter(file => {
+
+        const fileName = file.getBaseName().toLowerCase();
+
+        return (
+            fileName.endsWith(".ts") &&
+            !fileName.endsWith(".spec.ts") &&
+            allowed.some(type => fileName.includes(type))
+        );
+    });
 
     return files;
 }
