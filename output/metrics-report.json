@@ -1,6 +1,6 @@
 {
   "project": "greekspot_cms",
-  "generatedAt": "2026-05-18T16:10:52.989Z",
+  "generatedAt": "2026-05-18T19:46:18.784Z",
   "summary": {
     "totalClasses": 36,
     "totalLOC": 3526,
@@ -35,7 +35,10 @@
       "FanIn": 0,
       "NOCC": 0,
       "DAC": 2,
-      "type": "component"
+      "type": "component",
+      "smells": [
+        "Low Cohesion"
+      ]
     },
     {
       "name": "AuthGuard",
@@ -55,7 +58,8 @@
       "FanIn": 0,
       "NOCC": 0,
       "DAC": 0,
-      "type": "guard"
+      "type": "guard",
+      "smells": []
     },
     {
       "name": "JwtInterceptor",
@@ -75,7 +79,8 @@
       "FanIn": 0,
       "NOCC": 0,
       "DAC": 0,
-      "type": "interceptor"
+      "type": "interceptor",
+      "smells": []
     },
     {
       "name": "AdminMenuTagsService",
@@ -95,7 +100,8 @@
       "FanIn": 2,
       "NOCC": 0,
       "DAC": 0,
-      "type": "service"
+      "type": "service",
+      "smells": []
     },
     {
       "name": "AdminMenuService",
@@ -115,7 +121,10 @@
       "FanIn": 1,
       "NOCC": 0,
       "DAC": 0,
-      "type": "service"
+      "type": "service",
+      "smells": [
+        "Large Class"
+      ]
     },
     {
       "name": "AuthService",
@@ -135,7 +144,8 @@
       "FanIn": 3,
       "NOCC": 0,
       "DAC": 0,
-      "type": "service"
+      "type": "service",
+      "smells": []
     },
     {
       "name": "BlogService",
@@ -155,7 +165,8 @@
       "FanIn": 2,
       "NOCC": 0,
       "DAC": 0,
-      "type": "service"
+      "type": "service",
+      "smells": []
     },
     {
       "name": "ConfirmService",
@@ -175,7 +186,8 @@
       "FanIn": 9,
       "NOCC": 0,
       "DAC": 1,
-      "type": "service"
+      "type": "service",
+      "smells": []
     },
     {
       "name": "ContactService",
@@ -195,7 +207,8 @@
       "FanIn": 2,
       "NOCC": 0,
       "DAC": 0,
-      "type": "service"
+      "type": "service",
+      "smells": []
     },
     {
       "name": "GalleryService",
@@ -215,7 +228,8 @@
       "FanIn": 1,
       "NOCC": 0,
       "DAC": 0,
-      "type": "service"
+      "type": "service",
+      "smells": []
     },
     {
       "name": "GoogleService",
@@ -235,7 +249,8 @@
       "FanIn": 1,
       "NOCC": 0,
       "DAC": 0,
-      "type": "service"
+      "type": "service",
+      "smells": []
     },
     {
       "name": "HeroService",
@@ -255,7 +270,8 @@
       "FanIn": 1,
       "NOCC": 0,
       "DAC": 0,
-      "type": "service"
+      "type": "service",
+      "smells": []
     },
     {
       "name": "MenuService",
@@ -275,7 +291,8 @@
       "FanIn": 1,
       "NOCC": 0,
       "DAC": 0,
-      "type": "service"
+      "type": "service",
+      "smells": []
     },
     {
       "name": "NewsletterService",
@@ -295,7 +312,8 @@
       "FanIn": 1,
       "NOCC": 0,
       "DAC": 0,
-      "type": "service"
+      "type": "service",
+      "smells": []
     },
     {
       "name": "OpeningHoursService",
@@ -315,7 +333,8 @@
       "FanIn": 1,
       "NOCC": 0,
       "DAC": 0,
-      "type": "service"
+      "type": "service",
+      "smells": []
     },
     {
       "name": "OurStoryService",
@@ -335,7 +354,8 @@
       "FanIn": 1,
       "NOCC": 0,
       "DAC": 0,
-      "type": "service"
+      "type": "service",
+      "smells": []
     },
     {
       "name": "ReservationsService",
@@ -355,7 +375,8 @@
       "FanIn": 2,
       "NOCC": 0,
       "DAC": 0,
-      "type": "service"
+      "type": "service",
+      "smells": []
     },
     {
       "name": "SnackbarService",
@@ -375,7 +396,10 @@
       "FanIn": 11,
       "NOCC": 0,
       "DAC": 1,
-      "type": "service"
+      "type": "service",
+      "smells": [
+        "High FanIn"
+      ]
     },
     {
       "name": "TablesService",
@@ -395,7 +419,8 @@
       "FanIn": 1,
       "NOCC": 0,
       "DAC": 0,
-      "type": "service"
+      "type": "service",
+      "smells": []
     },
     {
       "name": "AdminLayoutComponent",
@@ -415,7 +440,8 @@
       "FanIn": 0,
       "NOCC": 0,
       "DAC": 0,
-      "type": "component"
+      "type": "component",
+      "smells": []
     },
     {
       "name": "LoginComponent",
@@ -435,7 +461,10 @@
       "FanIn": 0,
       "NOCC": 0,
       "DAC": 0,
-      "type": "component"
+      "type": "component",
+      "smells": [
+        "Low Cohesion"
+      ]
     },
     {
       "name": "ConfirmDialogComponent",
@@ -455,7 +484,10 @@
       "FanIn": 0,
       "NOCC": 0,
       "DAC": 1,
-      "type": "component"
+      "type": "component",
+      "smells": [
+        "Low Cohesion"
+      ]
     },
     {
       "name": "SnackbarComponent",
@@ -475,7 +507,10 @@
       "FanIn": 1,
       "NOCC": 0,
       "DAC": 1,
-      "type": "component"
+      "type": "component",
+      "smells": [
+        "Low Cohesion"
+      ]
     },
     {
       "name": "BlogManagerComponent",
@@ -495,7 +530,13 @@
       "FanIn": 0,
       "NOCC": 0,
       "DAC": 2,
-      "type": "component"
+      "type": "component",
+      "smells": [
+        "Large File",
+        "Large Class",
+        "High Message Passing",
+        "Low Cohesion"
+      ]
     },
     {
       "name": "ContactManagerComponent",
@@ -515,7 +556,8 @@
       "FanIn": 0,
       "NOCC": 0,
       "DAC": 2,
-      "type": "component"
+      "type": "component",
+      "smells": []
     },
     {
       "name": "AdminDashboardComponent",
@@ -535,7 +577,8 @@
       "FanIn": 0,
       "NOCC": 0,
       "DAC": 0,
-      "type": "component"
+      "type": "component",
+      "smells": []
     },
     {
       "name": "FloorManagerComponent",
@@ -555,7 +598,12 @@
       "FanIn": 0,
       "NOCC": 0,
       "DAC": 3,
-      "type": "component"
+      "type": "component",
+      "smells": [
+        "Large Class",
+        "High Complexity",
+        "High Message Passing"
+      ]
     },
     {
       "name": "GalleryManagerComponent",
@@ -575,7 +623,10 @@
       "FanIn": 0,
       "NOCC": 0,
       "DAC": 3,
-      "type": "component"
+      "type": "component",
+      "smells": [
+        "Low Cohesion"
+      ]
     },
     {
       "name": "GoogleRatingManagerComponent",
@@ -595,7 +646,8 @@
       "FanIn": 0,
       "NOCC": 0,
       "DAC": 1,
-      "type": "component"
+      "type": "component",
+      "smells": []
     },
     {
       "name": "HeroManagerComponent",
@@ -615,7 +667,8 @@
       "FanIn": 0,
       "NOCC": 0,
       "DAC": 3,
-      "type": "component"
+      "type": "component",
+      "smells": []
     },
     {
       "name": "MenuManagerComponent",
@@ -635,7 +688,16 @@
       "FanIn": 0,
       "NOCC": 0,
       "DAC": 1,
-      "type": "component"
+      "type": "component",
+      "smells": [
+        "Large File",
+        "Large Class",
+        "Too Many Properties",
+        "High Complexity",
+        "High RFC",
+        "High Message Passing",
+        "Low Cohesion"
+      ]
     },
     {
       "name": "NewsletterManagerComponent",
@@ -655,7 +717,12 @@
       "FanIn": 0,
       "NOCC": 0,
       "DAC": 2,
-      "type": "component"
+      "type": "component",
+      "smells": [
+        "Large Class",
+        "High Message Passing",
+        "Low Cohesion"
+      ]
     },
     {
       "name": "OpeningHoursManagerComponent",
@@ -675,7 +742,10 @@
       "FanIn": 0,
       "NOCC": 0,
       "DAC": 2,
-      "type": "component"
+      "type": "component",
+      "smells": [
+        "High Message Passing"
+      ]
     },
     {
       "name": "OurStoryManagerComponent",
@@ -695,7 +765,8 @@
       "FanIn": 0,
       "NOCC": 0,
       "DAC": 2,
-      "type": "component"
+      "type": "component",
+      "smells": []
     },
     {
       "name": "ReservationsManagerComponent",
@@ -715,7 +786,15 @@
       "FanIn": 0,
       "NOCC": 0,
       "DAC": 3,
-      "type": "component"
+      "type": "component",
+      "smells": [
+        "Large Class",
+        "Too Many Properties",
+        "High Complexity",
+        "High RFC",
+        "High Message Passing",
+        "Low Cohesion"
+      ]
     },
     {
       "name": "TagsManagerComponent",
@@ -735,7 +814,11 @@
       "FanIn": 0,
       "NOCC": 0,
       "DAC": 1,
-      "type": "component"
+      "type": "component",
+      "smells": [
+        "High Message Passing",
+        "Low Cohesion"
+      ]
     }
   ]
 }

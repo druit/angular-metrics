@@ -59,7 +59,8 @@ files.forEach(file => {
         
         jsonClasses.push({
             ...cls,
-            type: getAngularType(file.getBaseName())
+            type: getAngularType(file.getBaseName()),
+            smells: warnings
         });
         
         if (warnings.length > 0) {
