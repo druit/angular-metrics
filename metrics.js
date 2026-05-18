@@ -14,6 +14,7 @@ const { analyzeFile } = require("./metrics/fileMetrics");
 const { checkClassRefactor } = require("./rules");
 const { computeFanIn } = require("./metrics/metrics-libs/fanIn");
 const { createCSV } = require("./metrics/createCSV");
+const { createJSONReport } = require("./metrics/createJSON");
 const { computeNOCC } = require("./metrics/metrics-libs/nocc");
 
 
@@ -29,7 +30,9 @@ if (!projectPath) {
     process.exit(1);
 }
 
-const tsPattern = path.join(projectPath, "src/**/*.ts");
+const projectName = path.basename(projectPath);
+
+const tsPattern = `${projectPath}/src/**/*.ts`;
 
 const files = loadProject(tsPattern);
 
@@ -88,5 +91,8 @@ files.forEach(file => {
 });
 // Create CSV file
 createCSV(allClasses);
+
+// Create JSON file
+createJSONReport(projectName, allClasses);
 
 console.log("\nΗ ανάλυση ολοκληρώθηκε.");

@@ -1,4 +1,5 @@
 const fs = require("fs");
+const path = require("path");
 
 /*
     Δημιουργεί CSV αρχείο με όλα τα metrics
@@ -26,6 +27,10 @@ const fs = require("fs");
         - MAX
 */
 
+/*
+    Δημιουργεί CSV αρχείο με όλα τα metrics
+*/
+
 function getStats(values){
 
     const sum = values.reduce((a,b) => a + b, 0);
@@ -36,6 +41,13 @@ function getStats(values){
 }
 
 function createCSV(classes, fileName = "metrics.csv"){
+
+    // Create output folder if it does not exist
+    const outputDir = path.join(__dirname, "./../output");
+
+    if (!fs.existsSync(outputDir)) {
+        fs.mkdirSync(outputDir, { recursive: true });
+    }
 
     const csvRows = [];
 
@@ -103,36 +115,44 @@ function createCSV(classes, fileName = "metrics.csv"){
 
         stats.LOC.push(cls.LOC);
         stats.SLOC.push(cls.SLOC);
-        // ---------------------
+
         stats.NOM.push(cls.NOM);
         stats.NOP.push(cls.NOP);
         stats.NPM.push(cls.NPM);
-        // ---------------------
+
         stats.WMC.push(cls.WMC);
         stats.WMCstar.push(cls.WMCstar);
-        // ---------------------
+
         stats.DIT.push(cls.DIT);
         stats.CBO.push(cls.CBO);
         stats.RFC.push(cls.RFC);
         stats.LCOM.push(cls.LCOM);
         stats.MPC.push(cls.MPC);
-        // ---------------------
+
         stats.FanOut.push(cls.FanOut);
         stats.FanIn.push(cls.FanIn);
-        // ---------------------
+
         stats.NOCC.push(cls.NOCC);
         stats.DAC.push(cls.DAC);
     });
 
     csvRows.push("");
 
-    var maxMetrics = [];
-    var averageMetrics = [];
-    var sumMetrics = [];
-    const metricsArray = ["LOC","SLOC","NOM","NOP","NPM","WMC","WMCstar","DIT","CBO","RFC","LCOM","MPC","FanOut","FanIn", "NOCC", "DAC"];
+    const maxMetrics = [];
+    const averageMetrics = [];
+    const sumMetrics = [];
+
+    const metricsArray = [
+        "LOC","SLOC","NOM","NOP","NPM",
+        "WMC","WMCstar","DIT","CBO",
+        "RFC","LCOM","MPC","FanOut",
+        "FanIn","NOCC","DAC"
+    ];
 
     metricsArray.forEach(metric => {
+
         const { sum, avg, max } = getStats(stats[metric]);
+
         sumMetrics.push(sum);
         averageMetrics.push(avg);
         maxMetrics.push(max);
@@ -141,22 +161,24 @@ function createCSV(classes, fileName = "metrics.csv"){
 
     csvRows.push([
         "SUM",
-        sumMetrics,
+        ...sumMetrics
     ].join(","));
 
     csvRows.push([
         "AVERAGE",
-        averageMetrics,
+        ...averageMetrics
     ].join(","));
 
     csvRows.push([
         "MAX",
-        maxMetrics,
+        ...maxMetrics
     ].join(","));
 
-    fs.writeFileSync(fileName, csvRows.join("\n"));
+    const outputPath = path.join(outputDir, fileName);
 
-    console.log(`\nCSV δημιουργήθηκε: ${fileName}`);
+    fs.writeFileSync(outputPath, csvRows.join("\n"));
+
+    console.log(`\nCSV δημιουργήθηκε: ${outputPath}`);
 }
 
 module.exports = { createCSV };
