@@ -88,13 +88,13 @@ npm install
 ## Usage
 
 ```bash id="bx8zyw"
-npm run analyze "D:/Projects/your-angular-project"
+npm start "D:/Projects/your-angular-project"
 ```
 
 Example:
 
 ```bash id="wlpdws"
-npm run analyze "D:/Projects/greekspot_cms"
+npm start "D:/Projects/greekspot_cms"
 ```
 
 ---
@@ -248,13 +248,13 @@ npm install
 ## Χρήση
 
 ```bash id="6u8fkn"
-npm run analyze "D:/Projects/your-angular-project"
+npm start "D:/Projects/your-angular-project"
 ```
 
 Παράδειγμα:
 
 ```bash id="br0w5e"
-npm run analyze "D:/Projects/greekspot_cms"
+npm start "D:/Projects/greekspot_cms"
 ```
 
 ---
