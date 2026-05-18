@@ -48,17 +48,28 @@ The analyzer supports Angular-specific artifacts such as:
 * DAC (Data Abstraction Coupling)
 * Fan-In / Fan-Out
 
+These metrics are also utilized for maintainability analysis and code smell detection.
+
 ---
 
 ## Code Smell Detection
 
-The analyzer can detect maintainability issues such as:
+The analyzer supports rule-based maintainability and code smell detection using configurable metric thresholds.
 
+Detected smells include:
+
+* Large File
+* Large Class
 * High Complexity
-* Large Classes / Components
-* Excessive Coupling
 * High RFC
-* Maintainability warnings
+* High Coupling
+* High FanOut
+* High Message Passing
+* Deep Inheritance Tree
+* Too Many Properties
+* Too Many Child Classes
+* High Data Coupling
+* Low Cohesion
 
 ---
 
@@ -72,6 +83,8 @@ The analyzer currently supports:
 * CSV and JSON report generation
 * Project-level summary statistics
 * Angular artifact statistics
+* Rule-based smell detection
+* Configurable maintainability thresholds
 * Fan-In / Fan-Out analysis
 * Inheritance analysis
 * Maintainability warnings
@@ -135,6 +148,8 @@ Generated files include:
 * JSON structured analysis reports
 * Summary statistics
 * Angular artifact statistics
+* Maintainability smell statistics
+* Angular type classification
 
 Example:
 
@@ -149,15 +164,25 @@ Example JSON structure:
 ```json
 {
   "project": "greekspot_cms",
+
   "summary": {
     "totalClasses": 36
   },
+
   "classes": [
     {
       "name": "MenuManagerComponent",
+
       "type": "component",
+
       "LOC": 644,
-      "RFC": 107
+
+      "RFC": 107,
+
+      "smells": [
+        "Large File",
+        "High RFC"
+      ]
     }
   ]
 }
@@ -254,17 +279,28 @@ University of Macedonia
 * DAC
 * Fan-In / Fan-Out
 
+Οι μετρικές αυτές χρησιμοποιούνται επίσης για maintainability analysis και code smell detection.
+
 ---
 
 ## Ανίχνευση Code Smells
 
-Το εργαλείο μπορεί να εντοπίσει:
+Το εργαλείο υποστηρίζει rule-based maintainability και code smell detection μέσω configurable metric thresholds.
 
-* Υψηλή πολυπλοκότητα
-* Μεγάλες κλάσεις / components
-* Υπερβολική σύζευξη
-* Υψηλό RFC
-* Προειδοποιήσεις συντηρησιμότητας
+Υποστηρίζονται smells όπως:
+
+* Large File
+* Large Class
+* High Complexity
+* High RFC
+* High Coupling
+* High FanOut
+* High Message Passing
+* Deep Inheritance Tree
+* Too Many Properties
+* Too Many Child Classes
+* High Data Coupling
+* Low Cohesion
 
 ---
 
@@ -278,6 +314,8 @@ University of Macedonia
 * CSV και JSON report generation
 * Summary statistics σε επίπεδο project
 * Angular artifact statistics
+* Rule-based smell detection
+* Configurable maintainability thresholds
 * Fan-In / Fan-Out analysis
 * Inheritance analysis
 * Maintainability warnings
@@ -341,6 +379,8 @@ npm start "D:/Projects/greekspot_cms"
 * JSON structured reports
 * Summary statistics
 * Angular artifact statistics
+* Maintainability smell statistics
+* Angular type classification
 
 Παράδειγμα:
 
@@ -355,15 +395,25 @@ output/
 ```json
 {
   "project": "greekspot_cms",
+
   "summary": {
     "totalClasses": 36
   },
+
   "classes": [
     {
       "name": "MenuManagerComponent",
+
       "type": "component",
+
       "LOC": 644,
-      "RFC": 107
+
+      "RFC": 107,
+
+      "smells": [
+        "Large File",
+        "High RFC"
+      ]
     }
   ]
 }
